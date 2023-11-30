@@ -26,8 +26,9 @@ const register = async(req,res) => {
             password: passwordHash,
             orders:orders
         })
-        const savedUser = await newUser.save();
-        res.status(201).json(savedUser);
+        const token = jwt.sign({id: newUser._id},process.env.JWT_SECRET,{expiresIn:'24h'});
+        newUser.password = undefined;
+        res.status(201).json({token,newUser});
     } catch(err) {
         res.status(500).json({error: err.message});
     }
@@ -41,22 +42,42 @@ const login = async(req,res) => {
         } = req.body;
         const user = await User.findOne({email: email});
         if(!user) {
-            throw new Error("User does not exist");
+            throw new Error("Invalid Credentials");
         }
         const isMatch = await bcrypt.compare(password, user.password);
         if(!isMatch) {
             throw new Error("Invalid credentials");
         }
         const token = jwt.sign({ id: user._id}, process.env.JWT_SECRET);
-        delete user.password;
+        user.password=undefined;
         res.status(200).json({token,user});
-
     } catch(err) {
         res.status(500).json({error: err.message});
     }
 }
 
+const edit = async (req, res) => {
+    try {
+        const {
+            name,
+            email,
+            password,
+            confirmpassword,
+            orders
+        } = req.body;
+        const user = await User.findOneAndUpdate({ email: email }, req.body, { new: true });
+        if (!user) {
+            throw new Error("user not found");
+        } else {
+            res.status(200).json(user);
+        }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+}
+
 module.exports = {
     register,
-    login
+    login,
+    edit
 }

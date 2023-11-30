@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../App.css'
 import Top from "../header/top"
 import Bottom from "../footer/bottom"
@@ -7,11 +7,13 @@ import { foods } from '../../data/data'
 import Counter from '../total/counter'
 
 const mess = () => {
+  
   return (
     <div>
-      <h1><a href="/" className="hLink">Mess and Canteen Booking</a></h1>
+      <h1><a href="/home" className="hLink">Mess and Canteen Booking</a></h1>
       <Top />
       <div className="slide-back">
+      <div className='login-body-flex-item'>
         <p className="cartheading">Mess</p>
         <img src={FoodImg} alt="" className="outletImg" id='mess' />
         <div className="menu">
@@ -21,24 +23,15 @@ const mess = () => {
               {foods.map((food) => (
                 food.category === "mess" &&
                 <div className="list-item">
-                  <div className="flex-list">
-                    <div className="flex-name-desc">
-                      <div className="Name">{`${food.name}`}</div>
-                      <div className="Desc">{`${food.desc}`}</div>
-                    </div>
-                    <div className="flex-rate-quant">
-                      <div className="Rs">Rs</div>
-                      <div className="Rate">{`${food.price}`}</div>
-                      <Counter />
-                    </div>
-                  </div>
+                    <Counter data={food} shop={"Mess"}/>
                 </div>
               ))}
             </div>
           </div>
           <div className="btn-div">
-            <a href="/cart"><button className="navitem">View Cart</button></a>
+          <button className="navitem"><a href="/cart">View Cart</a></button>
           </div>
+        </div>
         </div>
         <Bottom />
       </div>

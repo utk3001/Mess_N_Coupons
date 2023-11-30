@@ -4,14 +4,16 @@ import Top from "../header/top"
 import Bottom from "../footer/bottom"
 import FoodImg from '../../assets/maggie.jpg'
 import { foods } from '../../data/data'
+import Counter from '../total/counter'
 
 
 const hotspot = () => {
   return (
     <div>
-      <h1><a href="/" className="hLink">Mess and Canteen Booking</a></h1>
+      <h1><a href="/home" className="hLink">Mess and Canteen Booking</a></h1>
       <Top/>
       <div className="slide-back">
+      <div className='login-body-flex-item'>
         <p className="cartheading">Hotspot</p>
         <img src={FoodImg} alt="" className="outletImg" />
         <div className="menu">
@@ -21,28 +23,15 @@ const hotspot = () => {
               {foods.map((food) => (
                 food.category === "hotspot" &&
                 <div className="list-item">
-                    <div className="flex-list">
-                      <div className="flex-name-desc">
-                        <div className="Name">{`${food.name}`}</div>
-                        <div className="Desc">{`${food.desc}`}</div>
-                      </div>
-                      <div className="flex-rate-quant">
-                        <div className="Rs">Rs</div>
-                        <div className="Rate">{`${food.price}`}</div>
-                        <div className="Quant">
-                          <button className="inc-dec" onclick="decrement(0)">-</button>
-                          <output className="Quant-out" id="out"></output>
-                          <button className="inc-dec" onclick="increment(0)">+</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    <Counter data={food} shop={"Hotspot"}/>
+                </div>
               ))}
             </div>
           </div>
           <div className="btn-div">
-            <button onclick="window.location.href='/cart'" className="navitem">View Cart</button>
+          <button className="navitem"><a href="/cart">View Cart</a></button>
           </div>
+        </div>
         </div>
         <Bottom/>
       </div>

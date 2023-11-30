@@ -41,18 +41,19 @@ const home = () => {
 
     return (
         <div>
-            <h1><a href="index.html" className="hLink">Mess and Canteen Booking</a></h1>
+            <h1><a href="/home" className="hLink">Mess and Canteen Booking</a></h1>
             <Top />
             <div className="slide-back">
+                <div className='login-body-flex-item'>
                 <div className="slider">
                     <div className="slides">
-                        <input type="radio" name="radio-btn" id="radio1" value={1} checked={num==1} onClick={handleChange}/>
-                        <input type="radio" name="radio-btn" id="radio2" value={2} checked={num==2} onClick={handleChange} />
-                        <input type="radio" name="radio-btn" id="radio3" value={3} checked={num==3} onClick={handleChange} />
-                        <input type="radio" name="radio-btn" id="radio4" value={4} checked={num==4} onClick={handleChange} />
-                        <input type="radio" name="radio-btn" id="radio5" value={5} checked={num==5} onClick={handleChange} />
-                        <input type="radio" name="radio-btn" id="radio6" value={6} checked={num==6} onClick={handleChange} />
-                        <input type="radio" name="radio-btn" id="radio7" value={7} checked={num==7} onClick={handleChange} />
+                        <input type="radio" name="radio-btn" id="radio1" value={1} checked={num===1} onClick={handleChange}/>
+                        <input type="radio" name="radio-btn" id="radio2" value={2} checked={num===2} onClick={handleChange} />
+                        <input type="radio" name="radio-btn" id="radio3" value={3} checked={num===3} onClick={handleChange} />
+                        <input type="radio" name="radio-btn" id="radio4" value={4} checked={num===4} onClick={handleChange} />
+                        <input type="radio" name="radio-btn" id="radio5" value={5} checked={num===5} onClick={handleChange} />
+                        <input type="radio" name="radio-btn" id="radio6" value={6} checked={num===6} onClick={handleChange} />
+                        <input type="radio" name="radio-btn" id="radio7" value={7} checked={num===7} onClick={handleChange} />
 
 
                         <div className="slide first"><img src={NorthIndian} alt="" /></div>
@@ -99,6 +100,7 @@ const home = () => {
                         <div> Book Online </div>
                         <div> Get Notified </div>
                     </div>
+                </div>
                 </div>
                 <Bottom />
             </div>

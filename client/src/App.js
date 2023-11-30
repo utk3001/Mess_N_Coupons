@@ -13,12 +13,13 @@ import Kerala from './components/outletPages/kerala'
 import Shake from './components/outletPages/shake'
 
 
+
 function App() {
   return (
     <div className="contain">
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/mess' element={<Mess />} />

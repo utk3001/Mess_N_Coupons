@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import { login } from '../../state/authSlice'
+import Bottom from '../footer/bottom'
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -27,7 +28,7 @@ const Login = () => {
       if(data.error) {
         throw data.error  
       }
-      navigate("/")
+      navigate("/home")
     } catch(error) {
       setError(error)
       setTimeout(()=> {
@@ -42,7 +43,7 @@ const Login = () => {
         <h1><a href="/" className="hLinkSign">Mess and Canteen Booking</a></h1>
         <h2 className="subHeading">Login</h2>
       </div>
-      <div>
+      <div className='login-body-flex-item'>
           <form onSubmit={handleLogin} className="frm">
               <div>
                   <input type="email" name="email" id="email" placeholder="Email ID" required autocomplete="off" onChange={(e)=> setEmail(e.target.value)}/>
@@ -58,6 +59,7 @@ const Login = () => {
             error && <div className="invalid">{`${error}`}</div>
           }
       </div>
+      <Bottom/>
     </div>
   )
 }

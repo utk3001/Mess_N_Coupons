@@ -14,7 +14,7 @@ const top = () => {
                     <div><a href="/cart" className="navitem cart-align">Cart</a></div>
                 </div>
                 <div className="drop-down">
-                    <div><a href="/login" className="navitem">Logout</a></div>
+                    <div><a href="/" className="navitem">Logout</a></div>
                 </div>
             </div>
   )

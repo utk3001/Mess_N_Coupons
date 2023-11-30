@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import { register } from '../../state/authSlice'
+import Bottom from '../footer/bottom'
 
 
 const Register = () => {
@@ -30,7 +31,7 @@ const Register = () => {
       if(data.error) {
         throw data.error
       }
-      navigate("/login") 
+      navigate("/") 
     } catch(error) {
       setError(error)
       setTimeout(()=> {
@@ -45,7 +46,7 @@ const Register = () => {
         <h1><a href="/" className="hLinkSign">Mess and Canteen Booking</a></h1>
         <h2 className="subHeading">Register</h2>
       </div>
-      <div>
+      <div className='login-body-flex-item'>
           <form onSubmit={handleRegister} className="frm">
               <div>
                   <input type="text" name="name" id="name" placeholder="Name" required autoComplete="off" onChange={(e)=> setName(e.target.value)}/>
@@ -66,6 +67,7 @@ const Register = () => {
             error && <div className="invalid">{`${error}`}</div>
           }
       </div>
+      <Bottom/>
     </div>
   )
 }

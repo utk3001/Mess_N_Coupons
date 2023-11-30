@@ -34,4 +34,102 @@ export const foods = [
         id: crypto.randomUUID(),
         price: 9
     },
+    {
+        name: 'Thali',
+        category: 'maincanteen',
+        desc: 'a meal',
+        id: crypto.randomUUID(),
+        price: 50
+    },
+    {
+        name: 'Samosa',
+        category: 'maincanteen',
+        desc: 'a hot snack',
+        id: crypto.randomUUID(),
+        price: 10
+    },
+    {
+        name: 'Dosa',
+        category: 'kerala',
+        desc: 'Crisp',
+        id: crypto.randomUUID(),
+        price: 50
+    },
+    {
+        name: 'Vada',
+        category: 'kerala',
+        desc: '2 pcs',
+        id: crypto.randomUUID(),
+        price: 25
+    },
+    {
+        name: 'Uttapam',
+        category: 'kerala',
+        desc: 'hot and fresh',
+        id: crypto.randomUUID(),
+        price: 60
+    },
+    {
+        name: 'Burger',
+        category: 'hotspot',
+        desc: 'hot and fresh',
+        id: crypto.randomUUID(),
+        price: 50
+    },
+    {
+        name: 'Kulcha',
+        category: 'hotspot',
+        desc: 'hot and fresh',
+        id: crypto.randomUUID(),
+        price: 60
+    },
+    {
+        name: 'Maggie',
+        category: 'hotspot',
+        desc: 'hot and fresh',
+        id: crypto.randomUUID(),
+        price: 25
+    },
+    {
+        name: 'Mix Juice',
+        category: 'shake',
+        desc: 'fresh',
+        id: crypto.randomUUID(),
+        price: 50
+    },
+    {
+        name: 'Chocolate Shake',
+        category: 'shake',
+        desc: 'chilled',
+        id: crypto.randomUUID(),
+        price: 30
+    },
+    {
+        name: 'Oreo Shake',
+        category: 'shake',
+        desc: 'chilled',
+        id: crypto.randomUUID(),
+        price: 40
+    },
+    {
+        name: 'Patties',
+        category: 'coffee',
+        desc: 'crispy',
+        id: crypto.randomUUID(),
+        price: 20
+    },
+    {
+        name: 'Brownie',
+        category: 'coffee',
+        desc: 'hot',
+        id: crypto.randomUUID(),
+        price: 50
+    },
+    {
+        name: 'Coffee',
+        category: 'coffee',
+        desc: 'hot',
+        id: crypto.randomUUID(),
+        price: 25
+    },
 ]

@@ -9,6 +9,8 @@ const morgan = require("morgan");
 const path = require("path");
 const authRoutes = require("./routes/auth.js");
 const userRoutes = require("./routes/users.js");
+const itemRoutes = require("./routes/item.js");
+const emailRoutes = require("./routes/email.js")
 
 dotenv.config();
 const app = express();
@@ -34,6 +36,8 @@ const upload = multer({storage});
 
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
+app.use("/item",itemRoutes);
+app.use("/email",emailRoutes)
 
 const PORT = process.env.PORT || 6001;
 mongoose

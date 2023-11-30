@@ -7,7 +7,10 @@
   font-family: "Rubik", sans-serif;
 }
 
-html,
+html{
+  height: 100%;
+}
+
 #root,
 .contain {
   height: 100%;
@@ -16,8 +19,8 @@ html,
 body {
   background-image: none !important;
   height: 100%;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .hLink {
@@ -53,6 +56,10 @@ body {
   border: 1px white solid;
   flex-shrink: 0;
 }
+.navitem a{
+  text-decoration: none;
+  color: inherit;
+}
 
 .drop-down {
   flex-grow: 1;
@@ -67,6 +74,8 @@ body {
 }
 
 .slide-back {
+  display: flex;
+  flex-direction: column;
   background-image: url("./assets/bg-texture.jpg");
   background-size: cover;
   padding: 2%;
@@ -240,6 +249,8 @@ body {
 
 
 .contact-us {
+  /* position: fixed; */
+  /* bottom: 0; */
   width: 200px;
   padding: 1%;
   color: white;
@@ -250,12 +261,17 @@ body {
 .login_body {
   background-image: url("./assets/form_bg.jpg");
   background-size: cover;
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   /* border: solid black 3px; */
   color: white;
   text-align: center;
   padding: 12px;
+}
+
+.login-body-flex-item{
+  flex-grow: 1;
 }
 
 .hLinkSign {
