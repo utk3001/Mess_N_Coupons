@@ -19,8 +19,10 @@ const Register = () => {
     e.preventDefault()
     try {
       const res = await fetch(`http://localhost:3001/auth/register`, {
+        credentials: 'include',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin':'http://localhost:3000/'
         },
         method: "POST",
         body: JSON.stringify({name,email,password,confirmpassword})
@@ -62,7 +64,7 @@ const Register = () => {
               </div>
               <button className="btn">Register</button>
           </form>
-          <a href="/login" className="acr">Already have an account? Login Here</a>
+          <a href="/" className="acr">Already have an account? Login Here</a>
           {
             error && <div className="invalid">{`${error}`}</div>
           }

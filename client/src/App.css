@@ -7,12 +7,11 @@
   font-family: "Rubik", sans-serif;
 }
 
-html{
-  height: 100%;
+#root {
+  height: 100vh;
 }
 
-#root,
-.contain {
+html,.contain{
   height: 100%;
 }
 
@@ -37,11 +36,16 @@ body {
 
 .navbar {
   display: flex;
+  min-height: 20%;
   flex-wrap: nowrap;
   padding: 16px 24px;
   background-color: rgba(0, 0, 0);
   column-gap: 2rem;
   width: auto;
+}
+
+.block {
+  display: block;
 }
 
 .navitem {
@@ -56,6 +60,12 @@ body {
   border: 1px white solid;
   flex-shrink: 0;
 }
+
+#lgo {
+  background-color: black;
+  margin-top: -6px;
+}
+
 .navitem a{
   text-decoration: none;
   color: inherit;

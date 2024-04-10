@@ -6,9 +6,10 @@ import Counter from '../total/counter'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const cart = () => {
+const Cart = () => {
 
     const [all, setAll] = useState(null);
+    const [user,setUser] = useState(null);
     const [error, setError] = useState("");
     const [total, setTotal] = useState(0);
     const [click, setClick] = useState(0);
@@ -16,6 +17,10 @@ const cart = () => {
     const navigate = useNavigate()
     const outlet = ["Mess", "Main Canteen", "Kerala Canteen", "Shakes N Juice", "Hotspot", "Coffee Day"];
     let ind=0;
+
+    const handle = (userData) => {
+        setUser(userData);
+    }
 
     const handleCancel = () => {
         removeAll();
@@ -87,7 +92,7 @@ const cart = () => {
             },
             
             body: JSON.stringify({
-              to: '2020eeb1214@iitrpr.ac.in',
+              to: user.email,
               subject: 'Confirmed Order',
               text: finalmsg
             }),
@@ -104,7 +109,7 @@ const cart = () => {
     return (
         <div className="contain">
             <h1><a href="/home" className="hLink">Mess and Canteen Booking</a></h1>
-            <Top />
+            <Top userData={handle} />
             <div className="slide-back">
             <div className='login-body-flex-item'>
                 <div className="cartheading">Cart</div>
@@ -163,4 +168,4 @@ const cart = () => {
     )
 }
 
-export default cart
+export default Cart

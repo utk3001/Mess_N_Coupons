@@ -16,8 +16,10 @@ const Login = () => {
     e.preventDefault()
     try {
       const res = await fetch(`http://localhost:3001/auth/login`, {
+        credentials: 'include',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin':'http://localhost:3000/'
         },
         method: "POST",
         body: JSON.stringify({email,password})
@@ -46,10 +48,10 @@ const Login = () => {
       <div className='login-body-flex-item'>
           <form onSubmit={handleLogin} className="frm">
               <div>
-                  <input type="email" name="email" id="email" placeholder="Email ID" required autocomplete="off" onChange={(e)=> setEmail(e.target.value)}/>
+                  <input type="email" name="email" id="email" placeholder="Email ID" required autoComplete="off" onChange={(e)=> setEmail(e.target.value)}/>
               </div>
               <div>
-                  <input type="password" name="password" id="password" placeholder="Password" required autocomplete="off" minlength="8" onChange={(e)=> setPassword(e.target.value)}/>
+                  <input type="password" name="password" id="password" placeholder="Password" required autoComplete="off" minLength="8" onChange={(e)=> setPassword(e.target.value)}/>
                   <a href="https://www.google.co.in/" className="acr">Forgot Password</a>
               </div>
               <button className="btn">Log In</button>

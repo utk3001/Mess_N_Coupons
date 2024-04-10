@@ -28,7 +28,8 @@ const register = async(req,res) => {
         })
         const token = jwt.sign({id: newUser._id},process.env.JWT_SECRET,{expiresIn:'24h'});
         newUser.password = undefined;
-        res.status(201).json({token,newUser});
+        res.cookie("token",token,{withCredentials: true,httpOnly: false});
+        res.status(201).json(newUser);
     } catch(err) {
         res.status(500).json({error: err.message});
     }
@@ -48,9 +49,10 @@ const login = async(req,res) => {
         if(!isMatch) {
             throw new Error("Invalid credentials");
         }
-        const token = jwt.sign({ id: user._id}, process.env.JWT_SECRET);
+        const token = jwt.sign({ id: user._id}, process.env.JWT_SECRET,{expiresIn:'24h'});
         user.password=undefined;
-        res.status(200).json({token,user});
+        res.cookie("token",token,{withCredentials: true,httpOnly: false});
+        res.status(201).json(user);
     } catch(err) {
         res.status(500).json({error: err.message});
     }
