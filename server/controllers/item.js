@@ -1,16 +1,16 @@
 const Item = require("../models/cart.js");
 
-const add = async(req,res) => {
+const add = async (req, res) => {
     try {
-        const{
+        const {
             name,
             desc,
             price,
             quantity,
             shop
         } = req.body;
-        const item = await Item.findOne({ name: name,shop:shop });
-        if(item) {
+        const item = await Item.findOne({ name: name, shop: shop });
+        if (item) {
             throw new Error("item already added");
         }
         const newItem = await Item.create({
@@ -21,41 +21,41 @@ const add = async(req,res) => {
             shop: shop
         })
         res.status(201).json(newItem);
-    } catch(err) {
-        res.status(500).json({error: err.message});
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 }
 
-const remove = async(req,res) => {
+const remove = async (req, res) => {
     try {
-        const{
+        const {
             name,
             desc,
             price,
             quantity,
             shop
         } = req.body;
-        const del = await Item.findOneAndDelete({ name: name, shop:shop });
+        const del = await Item.findOneAndDelete({ name: name, shop: shop });
         if (!del) {
             throw new Error("Item not found");
         } else {
             res.status(200).json(del);
         }
-    } catch(err) {
-        res.status(500).json({error: err.message});
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 }
 
 const edit = async (req, res) => {
     try {
-        const{
+        const {
             name,
             desc,
             price,
             quantity,
             shop
         } = req.body;
-        const item = await Item.findOneAndUpdate({ name: name,shop:shop }, req.body, { new: true });
+        const item = await Item.findOneAndUpdate({ name: name, shop: shop }, req.body, { new: true });
         if (!item) {
             throw new Error("Item not found");
         } else {
@@ -78,14 +78,14 @@ const getAll = async (req, res) => {
 
 const getOne = async (req, res) => {
     try {
-        const{
+        const {
             name,
             desc,
             price,
             quantity,
             shop
         } = req.body;
-        Item.findOne({ name: name,shop:shop }).then((data) => {
+        Item.findOne({ name: name, shop: shop }).then((data) => {
             res.send({ status: "200", data: data })
         });
     } catch (error) {
@@ -93,12 +93,12 @@ const getOne = async (req, res) => {
     }
 }
 
-const removeAll = async(req,res) => {
+const removeAll = async (req, res) => {
     try {
         const del = await Item.deleteMany({});
         res.status(200).json(del);
-    } catch(err) {
-        res.status(500).json({error: err.message});
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 }
 

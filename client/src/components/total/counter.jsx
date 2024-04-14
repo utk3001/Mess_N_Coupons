@@ -32,7 +32,7 @@ const Counter = (props) => {
         } else if (prev === 1 && quantity === 0) {
             console.log("Remove");
             handleRemove();
-        } else if(prev!==-1){
+        } else if (prev !== -1) {
             console.log("Edit");
             handleEdit();
         }
