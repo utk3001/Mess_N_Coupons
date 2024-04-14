@@ -1,0 +1,55 @@
+.flex-list {
+    display: flex;
+  }
+  
+  .flex-name-desc {
+    flex-grow: 0.9;
+    text-align: left;
+  }
+  
+  .flex-rate-quant {
+    flex-grow: 0.1;
+    text-align: center;
+  }
+  
+  .Name {
+    font-size: 24px;
+    margin-bottom: 2%;
+  }
+  
+  .Rate {
+    display: inline;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  
+  .Rs {
+    display: inline;
+  }
+  
+  .Desc {
+    font-size: 14px;
+  }
+  
+  .Quant {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .Quant-out {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  .inc-dec {
+    width: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .inc-dec:hover {
+    background-color: lightgrey;
+  }

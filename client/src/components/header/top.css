@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;
+  min-height: 20%;
+  flex-wrap: nowrap;
+  padding: 16px 24px;
+  background-color: rgba(0, 0, 0);
+  column-gap: 2rem;
+  width: auto;
+}
+
+.block {
+  display: block;
+}
+
+.navitem {
+  cursor: pointer;
+  text-decoration: none;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  border: 1px white solid;
+  flex-shrink: 0;
+}
+
+.navitem a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#lgo {
+  background-color: black;
+  margin-top: -6px;
+}
+
+.drop-down {
+  flex-grow: 1;
+}
+
+.cart-grow {
+  flex-grow: 10;
+}
+
+.cart-align {
+  margin-left: 90%;
+}

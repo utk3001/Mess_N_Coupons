@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../App.css'
+import './outlet.css'
 import Top from "../header/top"
 import Bottom from "../footer/bottom"
 import FoodImg from '../../assets/dosa.jpg'

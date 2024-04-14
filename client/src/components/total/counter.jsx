@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import '../../App.css'
+import './counter.css'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { edit, add, remove } from '../../state/cartSlice'

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "../../App.css"
+import "./home.css"
 import Top from "../header/top"
 import Bottom from "../footer/bottom"
 import Burger from "../../assets/burger.jpg"
@@ -37,7 +37,7 @@ const Home = () => {
             }
             console.log(num)
         }, 5000)
-    return () => clearInterval(intervalScroll);
+        return () => clearInterval(intervalScroll);
     }, []);
 
     return (
@@ -45,7 +45,7 @@ const Home = () => {
             <h1><a href="/home" className="hLink">Mess and Canteen Booking</a></h1>
             <Top />
             <div className="slide-back">
-                <div className='login-body-flex-item'>
+                <div>
                     <div className="slider">
                         <div className="slides">
                             <input type="radio" name="radio-btn" id="radio1" value={1} checked={num === 1} onClick={handleChange} />
